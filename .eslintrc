@@ -1,0 +1,10 @@
+{
+  "extends": "eslint-config-airbnb",
+  "rules": {
+    "react/prop-types": 0,
+    "react/jsx-no-bind": 0,
+    "comma-dangle": [2, "never"],
+    "arrow-body-style": 0,
+    "no-else-return": 1
+  }
+}
