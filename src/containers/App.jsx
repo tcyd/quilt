@@ -1,11 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as TodoActions from '../actions/todoActions'
+import { connect } from 'react-redux';
+import * as TodoActions from '../actions/todoActions';
 
 class App extends React.Component {
-  handleClick(e){
-    this.props.actions.addTodo('test')
+  handleClick() {
+    this.props.actions.addTodo('test');
   }
   render() {
     const todoList = this.props.todoList ? this.props.todoList : [];
@@ -24,13 +24,13 @@ class App extends React.Component {
 function mapStateToProps(state) {
   return {
     todoList: state.todo
-  }
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(TodoActions, dispatch)
-  }
+  };
 }
 
 export default connect(

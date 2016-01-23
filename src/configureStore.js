@@ -1,7 +1,7 @@
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import thunkMiddleware from 'redux-thunk';
+import DevTools from './containers/DevTools';
 import todoReducer from './reducers/todoReducer';
-import DevTools from './containers/DevTools'
 
 const finalCreateStore = compose(
   applyMiddleware(thunkMiddleware),
@@ -13,5 +13,5 @@ const rootReducer = combineReducers({
 });
 
 export default function configureStore(initialState) {
-   return finalCreateStore(rootReducer, initialState);
+  return finalCreateStore(rootReducer, initialState);
 }
