@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import App from './containers/App';
 import DevTools from './containers/DevTools';
 import configureStore from './configureStore';
+import './style/style.less';
 
 const store = configureStore();
 
