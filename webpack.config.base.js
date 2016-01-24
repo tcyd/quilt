@@ -9,7 +9,6 @@ var extractTextPlugin = new ExtractTextPlugin('style.css',{
 });
 var hotModuleReplacementPlugin = new _webpack.HotModuleReplacementPlugin();
 
-
 module.exports = {
     entry: {
         index: [
