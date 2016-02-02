@@ -2,21 +2,26 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as TodoActions from '../actions/todoActions';
+import { Row, Col } from 'antd';
+import Menu from '../components/Menu';
+import Header from '../components/Header';
+import Content from '../components/Content';
+import Footer from '../components/Footer';
 
 class App extends React.Component {
-  handleClick() {
-    this.props.actions.addTodo('test');
-  }
   render() {
     const todoList = this.props.todoList ? this.props.todoList : [];
-    const todoNodes = todoList.map(todo => (<li>{todo.text}</li>));
     return (
-      <div>
-        <button onClick={this.handleClick.bind(this)}>添加</button>
-        <ul>
-          {todoNodes}
-        </ul>
-      </div>
+      <Row style={{height: '100%'}}>
+        <Col span="4" style={{height: '100%'}}>
+          <Menu />
+        </Col>
+        <Col span="20">
+          <Header />
+          <Content todoList={todoList} addTodo={this.props.actions.addTodo} />
+          <Footer />
+        </Col>
+      </Row>
     );
   }
 }
